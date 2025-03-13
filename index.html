@@ -1,179 +1,35 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>جدول مباريات اليوم</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Tajawal", sans-serif;
-    }
-    body {
-      background-color: #121212;
-      color: #ffffff;
-      direction: rtl;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #FFD700;
-      margin-bottom: 30px;
-      font-size: 24px;
-    }
-    .matches-container {
-      width: 90%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .match-card {
-      background-color: #1E1E1E;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background-color 0.3s;
-    }
-    .match-card:hover {
-      background-color: #2A2A2A;
-      cursor: pointer;
-    }
-    .match-info {
-      display: flex;
-      flex-direction: column;
-      text-align: right;
-      flex: 1;
-      margin: 0 10px;
-    }
-    .teams {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .time, .commentator, .countdown {
-      font-size: 14px;
-      color: #cccccc;
-    }
-    .team-logo {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open URL Video in xPola Player</title>
+    <meta name="description" content="Experience seamless video playback with Xpola Player. Our page allows you to effortlessly play video URLs, offering high-quality streaming with minimal buffering. Perfect for viewers seeking an optimized watching experience. Click to enjoy your favorite videos now.">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png" />
+	<meta property="og:image" content=""/>
+
+<style> body { display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #000;
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+
+ } .play-button { background-color: #f7f7f7; color: #fff; border: none; padding: 10px; font-size: 24px; cursor: pointer; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; } .play-button:hover { background-color: #999; } .message-box { background-color: #333; border-radius: 8px; padding: 20px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; z-index: 1000; } .message-box p { margin: 0 0 20px; color: #ecf0f1; } } .message-box .actions { margin-top: 20px; } .message-box button { background-color: transparent; border: none; color: #f40; font-size: 16px; margin: 0 10px; padding: 6px; cursor: pointer; } .message-box button:hover { text-decoration: underline; } .message-box .checkbox-container { display: flex; align-items: center; justify-content: center; margin-top: 20px; } .message-box .checkbox-container input { margin-right: 10px; } label { color: #9E9E9E; } 
+
+</style>
+
 </head>
 <body>
 
-<h1>جدول مباريات اليوم</h1>
-
-<div class="matches-container">
-  
-  <div class="match-card">
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v2/Competitors/9242" alt="ليغانيس">
-    <div class="match-info">
-      <div class="teams">ليغانيس × خيتافي</div>
-      <div class="time">التوقيت: 16:00</div>
-      <div class="commentator">المعلق: عصام الشوالي</div>
-      <div class="countdown" id="match1"></div>
-    </div>
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v1/Competitors/140" alt="خيتافي">
-  </div>
-
-  <div class="match-card">
-    <img class="team-logo" src="https://g.top4top.io/p_3348rxbtl0.png" alt="برشلونة">
-    <div class="match-info">
-      <div class="teams">برشلونة × ريال سوسيداد</div>
-      <div class="time">التوقيت: 18:15</div>
-      <div class="commentator">المعلق: حفيظ دراجي</div>
-      <div class="countdown" id="match2"></div>
-    </div>
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v3/Competitors/154" alt="ريال سوسيداد">
-  </div>
-
-  <div class="match-card">
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v1/Competitors/142" alt="ريال مايوركا">
-    <div class="match-info">
-      <div class="teams">ريال مايوركا × ألافيس</div>
-      <div class="time">التوقيت: 20:30</div>
-      <div class="commentator">المعلق: رؤوف خليف</div>
-      <div class="countdown" id="match3"></div>
-    </div>
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v3/Competitors/168" alt="ألافيس">
-  </div>
-
-  <div class="match-card">
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v6/Competitors/143" alt="أوساسونا">
-    <div class="match-info">
-      <div class="teams">أوساسونا × فالنسيا</div>
-      <div class="time">التوقيت: 23:00</div>
-      <div class="commentator">المعلق: أحمد الطيب</div>
-      <div class="countdown" id="match4"></div>
-    </div>
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v2/Competitors/139" alt="فالنسيا">
-  </div>
-
-  <div class="match-card">
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v1/Competitors/116" alt="نيوكاسل">
-    <div class="match-info">
-      <div class="teams">نيوكاسل × برايتون</div>
-      <div class="time">التوقيت: 16:45</div>
-      <div class="commentator">المعلق: حسن العيدروس</div>
-      <div class="countdown" id="match5"></div>
-    </div>
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v2/Competitors/38" alt="برايتون">
-  </div>
-
-  <div class="match-card">
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v1/Competitors/105" alt="مانشستر يونايتد">
-    <div class="match-info">
-      <div class="teams">مانشستر يونايتد × فولهام</div>
-      <div class="time">التوقيت: 19:30</div>
-      <div class="commentator">المعلق: خليل البلوشي</div>
-      <div class="countdown" id="match6"></div>
-    </div>
-    <img class="team-logo" src="https://imagecache.365scores.com/image/upload/v1/Competitors/120" alt="فولهام">
-  </div>
-
-</div>
-
-<script>
-  function startCountdown(id, time) {
-    let matchTime = new Date();
-    let [hour, minute] = time.split(":").map(Number);
-    
-    matchTime.setHours(hour, minute, 0, 0);
-
-    function updateCountdown() {
-      let now = new Date();
-      let timeDifference = matchTime - now;
-
-      if (timeDifference <= 0) {
-        document.getElementById(id).innerHTML = "المباراة بدأت!";
-        return;
-      }
-
-      let hours = Math.floor(timeDifference / (1000 * 60 * 60));
-      let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-      document.getElementById(id).innerHTML = `باقي ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية`;
-
-      setTimeout(updateCountdown, 1000);
-    }
-
-    updateCountdown();
-  }
-
-  startCountdown("match1", "16:00");
-  startCountdown("match2", "18:15");
-  startCountdown("match3", "20:30");
-  startCountdown("match4", "23:00");
-  startCountdown("match5", "16:45");
-  startCountdown("match6", "19:30");
-
-</script>
-
+<button onClick="location.href='intent://XPOLA808eGRkYGMqPz92fHFoPX11dHlxPnN/fT9meXR1fz1jeHF7cT92fHFoPWB8cWl1Yj5geGAveXQteGRkYGM1I1E1IlY1IlZ8eWZ1PXQ9ICI9ZH90ZGY9dHI+cXtxfXF5anV0Pn51ZDUiVmZxYnlxfmQ1IlZmIXJ8cXN7f2VkNSJWY2B/PXh0PSMpPXQ9Y3h/YmR0ZmI1IlZUUUNYT1RRQ1g1IlZceWZ1NSJWc3hxfn51fDUiKGNgfz14dD0jKTUiKTUiVn1xfnl2dWNkPn1gdDUjVnh0fmRjNSNUY2Q1I1QhJyQhKCkhIiEibnVoYDUjVCEnJCEpICUmISJucXN8NSNUNSJWZnFieXF+ZDUiVmYhcnxxc3t/ZWQ1IlZjYH89eHQ9Iyk9dD1jeH9iZHRmYjUiVjUiUW50cWRxNSNUciMnJiF1cyY9ISEpIT0kKSkpPSl1JSM9JCcidXJzJygmdCEpbnh9cXM1I1QiKXIjISkhJ3RzJyIpIyl2KXUhdSAnJiNydnR2dClxISV1c3EmdSAoIilxJ3JyJCQpcidzJyQhdXR0KHYoKCEhNnt1aS0gcScpIyR0dHRzIyEjJnEmKSIiJSgkcikmcyN2dCF1JSomJyZ1JnQhdHQgIHJ2cnUiJiYgICN1dnF2IHUjcXEgIjZ8f3d/LTZ8eX57LWxgfHFpdWI9ZGlgdS1ndXJgfHFpdWJsZHlkfHUtcnV5fjBjYH9iZDB+dWdj;#Intent;scheme=xmtv;package=com.xpola.player;end'" class="play-button">
+<svg fill="#000000" height="80px" width="80px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve">
+    <g>
+        <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30 c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15 C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"/>
+        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30 S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+    </g>
+</svg>
+</button>
 </body>
 </html>
+
+    
